@@ -54,7 +54,7 @@ namespace XJUnity3D.Geometry
                     this.splinePositionT %= this.spline.controlPoints.Length;
                 }
             }
-            catch (System.OverflowException e)
+            catch
             {
                 // Unity 5.4.x 現在のところ、checked によるオーバーフローの検出は機能していないようです。
 

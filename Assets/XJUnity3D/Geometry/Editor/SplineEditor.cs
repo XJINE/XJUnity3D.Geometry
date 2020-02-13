@@ -273,7 +273,7 @@ namespace XJUnity3D.Geometry
                                    Quaternion.identity,
                                    handleSize * SCALE_GUI,
                                    handleSize * SCALE_PICK,
-                                   Handles.DotCap))
+                                   Handles.DotHandleCap))
                 {
                     this.selectedCtrlPointIndex = i;
 
