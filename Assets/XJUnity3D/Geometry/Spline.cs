@@ -23,7 +23,14 @@ namespace XJUnity3D.Geometry
         /// </returns>
         public Vector3 Position(float t)
         {
-            return CatmullSplineUtil.Position(t, GetControlPoint);
+            var i = Mathf.FloorToInt(t);
+            t -= i;
+
+            return CatmullSplineUtil.Position(t,
+                            GetControlPoint(i - 1).position,
+                            GetControlPoint(i).position,
+                            GetControlPoint(i + 1).position,
+                            GetControlPoint(i + 2).position);
         }
 
         /// <summary>
@@ -37,7 +44,14 @@ namespace XJUnity3D.Geometry
         /// </returns>
         public Vector3 Velosity(float t)
         {
-            return CatmullSplineUtil.Velocity(t, GetControlPoint);
+            var i = Mathf.FloorToInt(t);
+            t -= i;
+
+            return CatmullSplineUtil.Velocity(t,
+                            GetControlPoint(i - 1).position,
+                            GetControlPoint(i).position,
+                            GetControlPoint(i + 1).position,
+                            GetControlPoint(i + 2).position);
         }
 
         /// <summary>
