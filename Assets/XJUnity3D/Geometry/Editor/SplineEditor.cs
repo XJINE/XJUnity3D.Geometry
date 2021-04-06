@@ -111,7 +111,7 @@ namespace XJUnity3D.Geometry
         /// </summary>
         void OnEnable()
         {
-            SceneView.onSceneGUIDelegate += DrawSceneGUI;
+            SceneView.duringSceneGui += DrawSceneGUI;
         }
 
         /// <summary>
@@ -119,7 +119,7 @@ namespace XJUnity3D.Geometry
         /// </summary>
         void OnDisable()
         {
-            SceneView.onSceneGUIDelegate -= DrawSceneGUI;
+            SceneView.duringSceneGui -= DrawSceneGUI;
         }
 
         /// <summary>
